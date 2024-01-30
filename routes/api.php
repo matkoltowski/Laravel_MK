@@ -19,4 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/people', [PeopleCOntroller::class, 'store']);
+Route::get('/people/{id}', [PeopleCOntroller::class, 'show']);
+Route::put('/people/{id}', [PeopleCOntroller::class, 'update']);
+Route::delete('/people/{id}', [PeopleCOntroller::class, 'destroy']);
 Route::get('/people', [PeopleCOntroller::class, 'index']);
